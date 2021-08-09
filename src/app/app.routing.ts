@@ -9,5 +9,9 @@ export const appRoutes: Route[] = [
     {
         path: 'dashboard',
         loadChildren: () => import('./modules/pages/dashboard/dashboard.module').then(m => m.DashboardModule)
+    },
+    {
+        path: 'receive',
+        loadChildren: () => import('./modules/pages/receive/receive.module').then(m => m.ReceiveModule)
     }
 ];
