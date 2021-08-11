@@ -5,7 +5,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { appRoutes } from './app.routing';
-import { FuseModule } from 'src/@fuse';
+import { ZeloModule } from 'src/@zelo';
+
+
 
 
 const routerConfig: ExtraOptions = {
@@ -17,11 +19,13 @@ const routerConfig: ExtraOptions = {
 @NgModule({
   declarations: [
     AppComponent
+
+
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FuseModule,
+    ZeloModule,
     RouterModule.forRoot(appRoutes, routerConfig)
   ],
   providers: [],

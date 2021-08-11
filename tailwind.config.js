@@ -2,7 +2,7 @@ const path = require('path');
 const process = require('process');
 const colors = require('tailwindcss/colors');
 const defaultTheme = require('tailwindcss/defaultTheme');
-const generatePalette = require(path.resolve(__dirname, ('src/@fuse/tailwind/utils/generate-palette')));
+const generatePalette = require(path.resolve(__dirname, ('src/@zelo/tailwind/utils/generate-palette')));
 
 /**
  * Custom palettes
@@ -254,61 +254,61 @@ const config = {
             typography: (theme) => ({
                 DEFAULT: {
                     css: {
-                        color: 'var(--fuse-text-default)',
+                        color: 'var(--zelo-text-default)',
                         '[class~="lead"]': {
-                            color: 'var(--fuse-text-secondary)'
+                            color: 'var(--zelo-text-secondary)'
                         },
                         a: {
-                            color: 'var(--fuse-primary-500)'
+                            color: 'var(--zelo-primary-500)'
                         },
                         strong: {
-                            color: 'var(--fuse-text-default)'
+                            color: 'var(--zelo-text-default)'
                         },
                         'ol > li::before': {
-                            color: 'var(--fuse-text-secondary)'
+                            color: 'var(--zelo-text-secondary)'
                         },
                         'ul > li::before': {
-                            backgroundColor: 'var(--fuse-text-hint)'
+                            backgroundColor: 'var(--zelo-text-hint)'
                         },
                         hr: {
-                            borderColor: 'var(--fuse-border)'
+                            borderColor: 'var(--zelo-border)'
                         },
                         blockquote: {
-                            color: 'var(--fuse-text-default)',
-                            borderLeftColor: 'var(--fuse-border)'
+                            color: 'var(--zelo-text-default)',
+                            borderLeftColor: 'var(--zelo-border)'
                         },
                         h1: {
-                            color: 'var(--fuse-text-default)'
+                            color: 'var(--zelo-text-default)'
                         },
                         h2: {
-                            color: 'var(--fuse-text-default)'
+                            color: 'var(--zelo-text-default)'
                         },
                         h3: {
-                            color: 'var(--fuse-text-default)'
+                            color: 'var(--zelo-text-default)'
                         },
                         h4: {
-                            color: 'var(--fuse-text-default)'
+                            color: 'var(--zelo-text-default)'
                         },
                         'figure figcaption': {
-                            color: 'var(--fuse-text-secondary)'
+                            color: 'var(--zelo-text-secondary)'
                         },
                         code: {
-                            color: 'var(--fuse-text-default)',
+                            color: 'var(--zelo-text-default)',
                             fontWeight: '500'
                         },
                         'a code': {
-                            color: 'var(--fuse-primary)'
+                            color: 'var(--zelo-primary)'
                         },
                         pre: {
                             color: theme('colors.white'),
                             backgroundColor: theme('colors.gray.800')
                         },
                         thead: {
-                            color: 'var(--fuse-text-default)',
-                            borderBottomColor: 'var(--fuse-border)'
+                            color: 'var(--zelo-text-default)',
+                            borderBottomColor: 'var(--zelo-border)'
                         },
                         'tbody tr': {
-                            borderBottomColor: 'var(--fuse-border)'
+                            borderBottomColor: 'var(--zelo-border)'
                         }
                     }
                 },
@@ -452,11 +452,11 @@ const config = {
     },
     plugins: [
 
-        // Fuse - Tailwind plugins
-        require(path.resolve(__dirname, ('src/@fuse/tailwind/plugins/extract-config'))),
-        require(path.resolve(__dirname, ('src/@fuse/tailwind/plugins/utilities'))),
-        require(path.resolve(__dirname, ('src/@fuse/tailwind/plugins/icon-size'))),
-        require(path.resolve(__dirname, ('src/@fuse/tailwind/plugins/theming')))({ themes }),
+        // zelo - Tailwind plugins
+        require(path.resolve(__dirname, ('src/@zelo/tailwind/plugins/extract-config'))),
+        require(path.resolve(__dirname, ('src/@zelo/tailwind/plugins/utilities'))),
+        require(path.resolve(__dirname, ('src/@zelo/tailwind/plugins/icon-size'))),
+        require(path.resolve(__dirname, ('src/@zelo/tailwind/plugins/theming')))({ themes }),
 
         // Other third party and/or custom plugins
         require('@tailwindcss/typography')({ modifiers: ['sm', 'lg'] }),

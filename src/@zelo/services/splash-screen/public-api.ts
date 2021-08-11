@@ -1,0 +1,2 @@
+export * from '@zelo/services/splash-screen/splash-screen.module';
+export * from '@zelo/services/splash-screen/splash-screen.service';

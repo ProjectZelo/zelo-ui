@@ -1,0 +1,189 @@
+/* Variables */
+$zelo-vertical-navigation-width: 280;
+$zelo-vertical-navigation-dense-width: 80;
+
+zelo-vertical-navigation {
+
+    /* Dense appearance overrides */
+    &.zelo-vertical-navigation-appearance-dense {
+
+        &:not(.zelo-vertical-navigation-mode-over) {
+            width: #{$zelo-vertical-navigation-dense-width}px;
+            min-width: #{$zelo-vertical-navigation-dense-width}px;
+            max-width: #{$zelo-vertical-navigation-dense-width}px;
+
+            /* Left positioned */
+            &.zelo-vertical-navigation-position-left {
+
+                /* Side mode */
+                &.zelo-vertical-navigation-mode-side {
+                    margin-left: -#{$zelo-vertical-navigation-dense-width}px;
+                }
+
+                /* Opened */
+                &.zelo-vertical-navigation-opened {
+                    margin-left: 0;
+                }
+            }
+
+            /* Right positioned */
+            &.zelo-vertical-navigation-position-right {
+
+                /* Side mode */
+                &.zelo-vertical-navigation-mode-side {
+                    margin-right: -#{$zelo-vertical-navigation-dense-width}px;
+                }
+
+                /* Opened */
+                &.zelo-vertical-navigation-opened {
+                    margin-right: 0;
+                }
+
+                /* Aside wrapper */
+                .zelo-vertical-navigation-aside-wrapper {
+                    left: auto;
+                    right: #{$zelo-vertical-navigation-dense-width}px;
+                }
+
+                &.zelo-vertical-navigation-hover {
+
+                    .zelo-vertical-navigation-aside-wrapper {
+                        left: auto;
+                        right: #{$zelo-vertical-navigation-width}px;
+                    }
+                }
+            }
+        }
+
+        /* Wrapper */
+        .zelo-vertical-navigation-wrapper {
+
+            /* Content */
+            .zelo-vertical-navigation-content {
+
+                zelo-vertical-navigation-aside-item,
+                zelo-vertical-navigation-basic-item,
+                zelo-vertical-navigation-collapsable-item,
+                zelo-vertical-navigation-group-item {
+
+                    .zelo-vertical-navigation-item-wrapper {
+
+                        .zelo-vertical-navigation-item {
+                            width: #{$zelo-vertical-navigation-width}px - 24px;
+                            min-width: #{$zelo-vertical-navigation-width}px - 24px;
+                            max-width: #{$zelo-vertical-navigation-width}px - 24px;
+
+                            .zelo-vertical-navigation-item-arrow,
+                            .zelo-vertical-navigation-item-badge,
+                            .zelo-vertical-navigation-item-title-wrapper {
+                                transition: opacity 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+                            }
+                        }
+                    }
+                }
+
+                zelo-vertical-navigation-group-item {
+
+                    &:first-of-type {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+
+        &:not(.zelo-vertical-navigation-hover):not(.zelo-vertical-navigation-mode-over) {
+
+            /* Wrapper */
+            .zelo-vertical-navigation-wrapper {
+
+                /* Content */
+                .zelo-vertical-navigation-content {
+
+                    .zelo-vertical-navigation-item-wrapper {
+
+                        .zelo-vertical-navigation-item {
+                            padding: 10px 16px;
+
+                            .zelo-vertical-navigation-item-arrow,
+                            .zelo-vertical-navigation-item-badge,
+                            .zelo-vertical-navigation-item-title-wrapper {
+                                white-space: nowrap;
+                                opacity: 0;
+                            }
+                        }
+                    }
+
+                    zelo-vertical-navigation-collapsable-item {
+
+                        .zelo-vertical-navigation-item-children {
+                            display: none;
+                        }
+                    }
+
+                    zelo-vertical-navigation-group-item {
+
+                        > .zelo-vertical-navigation-item-wrapper {
+
+                            .zelo-vertical-navigation-item {
+
+                                &:before {
+                                    content: '';
+                                    position: absolute;
+                                    top: 20px;
+                                    width: 23px;
+                                    border-top-width: 2px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /* Aside wrapper */
+        .zelo-vertical-navigation-aside-wrapper {
+            left: #{$zelo-vertical-navigation-dense-width}px;
+        }
+
+        /* Hover */
+        &.zelo-vertical-navigation-hover {
+
+            .zelo-vertical-navigation-wrapper {
+                width: #{$zelo-vertical-navigation-width}px;
+
+                .zelo-vertical-navigation-content {
+
+                    .zelo-vertical-navigation-item-wrapper {
+
+                        .zelo-vertical-navigation-item {
+
+                            .zelo-vertical-navigation-item-arrow,
+                            .zelo-vertical-navigation-item-badge,
+                            .zelo-vertical-navigation-item-title-wrapper {
+                                white-space: nowrap;
+                                animation: removeWhiteSpaceNoWrap 1ms linear 350ms;
+                                animation-fill-mode: forwards;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .zelo-vertical-navigation-aside-wrapper {
+                left: #{$zelo-vertical-navigation-width}px;
+            }
+        }
+    }
+}
+
+@keyframes removeWhiteSpaceNoWrap {
+    0% {
+        white-space: nowrap
+    }
+    99% {
+        white-space: nowrap
+    }
+    100% {
+        white-space: normal;
+    }
+}

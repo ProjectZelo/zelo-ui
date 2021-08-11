@@ -36,9 +36,9 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/@fuse/styles/tailwind.scss",
-              "src/@fuse/styles/themes.scss",
-              "src/@fuse/styles/main.scss",
+              "src/@zelo/styles/tailwind.scss",
+              "src/@zelo/styles/themes.scss",
+              "src/@zelo/styles/main.scss",
               "src/styles/styles.scss",
               "src/styles/tailwind.scss"
             ],
