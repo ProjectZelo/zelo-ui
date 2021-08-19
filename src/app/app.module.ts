@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { appRoutes } from './app.routing';
 import { ZeloModule } from 'src/@zelo';
+import { HeaderComponent } from './header/header.component';
+import { ZeloNavigationComponent } from './zelo-navigation/zelo-navigation.component';
 
 
 
@@ -18,7 +20,11 @@ const routerConfig: ExtraOptions = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    ZeloNavigationComponent
+
+
 
 
   ],
@@ -26,9 +32,23 @@ const routerConfig: ExtraOptions = {
     BrowserModule,
     BrowserAnimationsModule,
     ZeloModule,
-    RouterModule.forRoot(appRoutes, routerConfig)
+
+    RouterModule.forRoot(appRoutes, routerConfig),
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+
+
+
+
+
+
+
+
+

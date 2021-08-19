@@ -6,19 +6,20 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { ZeloScrollbarModule } from '@zelo/directives/scrollbar/public-api';
-import { ZeloHorizontalNavigationBasicItemComponent } from '@zelo/components/navigation/horizontal/components/basic/basic.component';
-import { ZeloHorizontalNavigationBranchItemComponent } from '@zelo/components/navigation/horizontal/components/branch/branch.component';
-import { ZeloHorizontalNavigationDividerItemComponent } from '@zelo/components/navigation/horizontal/components/divider/divider.component';
-import { ZeloHorizontalNavigationSpacerItemComponent } from '@zelo/components/navigation/horizontal/components/spacer/spacer.component';
-import { ZeloHorizontalNavigationComponent } from '@zelo/components/navigation/horizontal/horizontal.component';
-import { ZeloVerticalNavigationAsideItemComponent } from '@zelo/components/navigation/vertical/components/aside/aside.component';
-import { ZeloVerticalNavigationBasicItemComponent } from '@zelo/components/navigation/vertical/components/basic/basic.component';
-import { ZeloVerticalNavigationCollapsableItemComponent } from '@zelo/components/navigation/vertical/components/collapsable/collapsable.component';
-import { ZeloVerticalNavigationDividerItemComponent } from '@zelo/components/navigation/vertical/components/divider/divider.component';
-import { ZeloVerticalNavigationGroupItemComponent } from '@zelo/components/navigation/vertical/components/group/group.component';
-import { ZeloVerticalNavigationSpacerItemComponent } from '@zelo/components/navigation/vertical/components/spacer/spacer.component';
-import { ZeloVerticalNavigationComponent } from '@zelo/components/navigation/vertical/vertical.component';
+import { ZeloHorizontalNavigationBasicItemComponent } from './horizontal/components/basic/basic.component';
+import { ZeloHorizontalNavigationBranchItemComponent } from './horizontal/components/branch/branch.component';
+import { ZeloHorizontalNavigationDividerItemComponent } from './horizontal/components/divider/divider.component';
+import { ZeloHorizontalNavigationSpacerItemComponent } from './horizontal/components/spacer/spacer.component';
+import { ZeloHorizontalNavigationComponent } from './horizontal/horizontal.component';
+import { ZeloVerticalNavigationAsideItemComponent } from './vertical/components/aside/aside.component';
+import { ZeloVerticalNavigationBasicItemComponent } from './vertical/components/basic/basic.component';
+import { ZeloVerticalNavigationCollapsableItemComponent } from './vertical/components/collapsable/collapsable.component';
+import { ZeloVerticalNavigationDividerItemComponent } from './vertical/components/divider/divider.component';
+import { ZeloVerticalNavigationGroupItemComponent } from './vertical/components/group/group.component';
+import { ZeloVerticalNavigationSpacerItemComponent } from './vertical/components/spacer/spacer.component';
+import { ZeloVerticalNavigationComponent } from './vertical/vertical.component';
+import { ZeloScrollbarModule } from 'src/@zelo/directives/scrollbar/scrollbar.module';
+
 
 @NgModule({
     declarations: [
@@ -50,5 +51,5 @@ import { ZeloVerticalNavigationComponent } from '@zelo/components/navigation/ver
         ZeloVerticalNavigationComponent
     ]
 })
-export class ZeloNavigationModule {
+export class ZeloNavModule {
 }

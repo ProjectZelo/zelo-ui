@@ -1,9 +1,11 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { ReplaySubject, Subject } from 'rxjs';
-import { zeloAnimations } from '@zelo/animations';
-import { ZeloNavigationItem } from '@zelo/components/navigation/navigation.types';
-import { ZeloNavigationService } from '@zelo/components/navigation/navigation.service';
-import { ZeloUtilsService } from '@zelo/services/utils/utils.service';
+
+import { ZeloNavigationService } from '../navigation.service';
+import { ZeloUtilsService } from 'src/@zelo/services/utils/utils.service';
+import { zeloAnimations } from 'src/@zelo/animations/public-api';
+import { ZeloNavigationItem } from '../navigation.types';
+import { horizontalNavigation } from 'src/app/data/navigation.constant';
 
 @Component({
     selector: 'zelo-horizontal-navigation',
@@ -11,12 +13,11 @@ import { ZeloUtilsService } from '@zelo/services/utils/utils.service';
     styleUrls: ['./horizontal.component.scss'],
     animations: zeloAnimations,
     encapsulation: ViewEncapsulation.None,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    exportAs: 'zeloHorizontalNavigation'
+
 })
 export class ZeloHorizontalNavigationComponent implements OnChanges, OnInit, OnDestroy {
     @Input() name: string = this._zeloUtilsService.randomId();
-    @Input() navigation: ZeloNavigationItem[];
+    @Input() navigation = horizontalNavigation;
 
     onRefreshed: ReplaySubject<boolean> = new ReplaySubject<boolean>(1);
     private _unsubscribeAll: Subject<any> = new Subject<any>();

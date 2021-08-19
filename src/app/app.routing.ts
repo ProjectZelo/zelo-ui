@@ -1,9 +1,13 @@
 import { Route } from '@angular/router';
+import { ZeloNavigationComponent } from './zelo-navigation/zelo-navigation.component';
+
+
 
 /**
  * TODO: Create modiules for each page in zelo
  */
 export const appRoutes: Route[] = [
+
 
     { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
     {

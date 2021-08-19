@@ -1,0 +1,11 @@
+<div class=" flex justify-center items-center h-12">
+
+    <div class=" flex " *ngFor="let item of navigationItem">
+        <a [routerLink]="item.link"
+            class="text-gray-100 border-transparent border-b-2 hover:border-gray-100 hover:font-bold  px-5 py-3 text-lg font-small "
+            aria-current="page">{{item.title}}</a>
+
+
+    </div>
+
+</div>
