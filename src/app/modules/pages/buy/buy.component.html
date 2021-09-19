@@ -1,5 +1,5 @@
 <page-container>
-    <div class="rounded-2xl ml-5 mt-4">
+    <div *ngIf="!isSelected" class="rounded-2xl ml-5 mt-4">
 
 
         <div class="flex-auto p-6 sm:p-10 text-center">
@@ -11,15 +11,124 @@
                         d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z"
                         fill="#648299" fill-rule="nonzero" />
                 </svg>
-                <select
-                    class="border border-gray-300 rounded-full text-gray-600 h-10 pl-30 pr-30 bg-white hover:border-gray-400 focus:outline-none appearance-none ">
-                    <option>select</option>
-                    <option>ABC</option>
-                    <option>XYZ</option>
 
+                <select
+                    class="border border-gray-300 rounded-full text-gray-600 h-10 pl-30 pr-30 bg-white hover:border-gray-400 focus:outline-none appearance-none "
+                    (change)="ChangingValue($event)">
+                    <option *ngFor="let method of paymentMethod" [value]="method.value" [disabled]="method.disable">
+                        {{method.type}}</option>
                 </select>
+
             </div>
         </div>
     </div>
 
-</page-container>>
+    <div *ngIf="isSelected" class="form-section">
+        <div class="align-form">
+            <div class="mr-5">
+                <mat-form-field class="example-form-field" appearance="fill">
+                    <mat-label>Credit Card Number</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="example-form-field" appearance="fill">
+                    <mat-label>CCV</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="align-form">
+            <div class="mr-5">
+                <mat-form-field class="example-form-field" appearance="fill">
+                    <mat-label>Expiry Month</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="example-form-field" appearance="fill">
+                    <mat-label>Expiry Year</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="align-form">
+            <div class="mr-5">
+                <mat-form-field class="example-form-field" appearance="fill">
+                    <mat-label>First Name</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="example-form-field" appearance="fill">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="align-form">
+            <div class="mr-5">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Address</mat-label>
+                    <textarea matInput placeholder="Ex. 100 Main St"></textarea>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Address 2</mat-label>
+                    <textarea matInput></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="align-form">
+            <div class="mr-5">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>City</mat-label>
+                    <input matInput placeholder="Ex. San Francisco">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>State</mat-label>
+                    <input matInput placeholder="Ex. California">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="align-form">
+            <div class="mr-5">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Postal Code</mat-label>
+                    <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="">
+                    <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+                </mat-form-field>
+            </div>
+            <div>
+                <div>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Phone</mat-label>
+                        <span matPrefix>+1 &nbsp;</span>
+                        <input type="tel" matInput placeholder="555-555-1234">
+                        <mat-icon matSuffix>mode_edit</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                            placeholder="Ex. pat@example.com">
+                        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                            Please enter a valid email address
+                        </mat-error>
+                        <mat-error *ngIf="emailFormControl.hasError('required')">
+                            Email is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</page-container>

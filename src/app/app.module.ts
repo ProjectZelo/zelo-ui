@@ -8,6 +8,8 @@ import { appRoutes } from './app.routing';
 import { ZeloModule } from 'src/@zelo';
 import { HeaderComponent } from './header/header.component';
 import { ZeloNavigationComponent } from './zelo-navigation/zelo-navigation.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
 
 
 
@@ -34,6 +36,10 @@ const routerConfig: ExtraOptions = {
     ZeloModule,
 
     RouterModule.forRoot(appRoutes, routerConfig),
+
+    StoreModule.forRoot(reducers, {
+      metaReducers
+    }),
 
   ],
   providers: [],
