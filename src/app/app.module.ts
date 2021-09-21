@@ -11,6 +11,8 @@ import { ZeloNavigationComponent } from './zelo-navigation/zelo-navigation.compo
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -49,7 +51,11 @@ const routerConfig: ExtraOptions = {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+
+    StoreModule.forRoot(reducers, {
+      metaReducers
+    }),
 
   ],
   providers: [],
