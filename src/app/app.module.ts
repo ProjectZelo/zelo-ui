@@ -8,9 +8,18 @@ import { appRoutes } from './app.routing';
 import { ZeloModule } from 'src/@zelo';
 import { HeaderComponent } from './header/header.component';
 import { ZeloNavigationComponent } from './zelo-navigation/zelo-navigation.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 
+export function HttpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
+}
 
-
+export function loadLocale() : string {
+  // TODO: get user's preffered language
+  return 'en';
+}
 
 const routerConfig: ExtraOptions = {
   onSameUrlNavigation: 'reload', // TODO: Confirm a use case fo this
@@ -32,14 +41,28 @@ const routerConfig: ExtraOptions = {
     BrowserModule,
     BrowserAnimationsModule,
     ZeloModule,
-
+    HttpClientModule,
     RouterModule.forRoot(appRoutes, routerConfig),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
 
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(private translate: TranslateService) {
+    this.translate.addLangs(['en', 'fr']);
+    this.translate.setDefaultLang('en');
+    const browserLang = this.translate.getBrowserLang();
+    this.translate.use(browserLang.match(/en|fr/) ? browserLang : 'en')
+  }
+}
 
 
 
