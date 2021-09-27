@@ -13,6 +13,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
+import { ApiService } from './api-store/services/api.service';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -58,7 +59,7 @@ const routerConfig: ExtraOptions = {
     }),
 
   ],
-  providers: [],
+  providers: [ApiService  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

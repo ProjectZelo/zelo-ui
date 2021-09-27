@@ -26,6 +26,7 @@ export class BuyComponent implements OnInit {
   ]);
 
   matcher = new MyErrorStateMatcher();
+  cardNumber: number;
 
   constructor() { }
 
@@ -57,5 +58,9 @@ export class BuyComponent implements OnInit {
 
   CCInputChange($event: Event) {
 
+  }
+
+  submit() {
+    console.log('cardNum', this.cardNumber);
   }
 }
