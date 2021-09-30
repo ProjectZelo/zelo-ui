@@ -59,13 +59,19 @@ export class HighchartComponent implements OnInit {
       yAxis: {
         allowDecimals: false,
         visible: true,
+        lineWidth: 1,
+        gridLineColor: 'transparent',
         min: 0,
         title: {
           text: 'label'
         }
       },
       legend: {
-        itemMarginTop: 16
+        itemMarginTop: 16,
+        itemStyle: {
+          color: '#dee0e3'
+        },
+
       },
       tooltip: {
         shared: true,

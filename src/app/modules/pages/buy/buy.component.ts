@@ -64,3 +64,4 @@ export class BuyComponent implements OnInit {
     console.log('cardNum', this.cardNumber);
   }
 }
+

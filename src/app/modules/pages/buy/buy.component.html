@@ -3,18 +3,17 @@
 
 
         <div class="flex-auto p-6 sm:p-10 text-center">
-            <div class="text font-semibold text-2xl gap-5 m-5 ml-5 relative dark bg-gray-800 dark:bg-gray-900"> Select a
+            <div class="text font-semibold text-3xl gap-5 m-5 ml-5 relative dark bg-gray-800 dark:bg-gray-900"> Select a
                 payment method</div>
 
             <div class="relative inline-flex ">
-                <svg class="selector" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232">
+                <!-- <svg class="selector" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232">
                     <path
                         d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z"
                         fill="#648299" fill-rule="nonzero" />
-                </svg>
+                </svg> -->
 
-                <select
-                    class="border border-gray-300 rounded-full text-gray-600 h-10 pl-30 pr-30 bg-white hover:border-gray-400 focus:outline-none appearance-none "
+                <select class="border border-gray-300 text-gray-600 h-10 pl-30 pr-30 bg-white hover:borde "
                     (change)="ChangingValue($event)">
                     <option *ngFor="let method of paymentMethod" [value]="method.value" [disabled]="method.disable">
                         {{method.type}}</option>
@@ -24,8 +23,8 @@
         </div>
     </div>
 
-    <div *ngIf="isSelected" class="form-section">
-        <div class="align-form">
+    <div *ngIf="isSelected" class="form-section relative dark bg-gray-800 dark:bg-gray-900">
+        <div class="align-form ">
             <div class="mr-5">
                 <mat-form-field class="example-form-field" appearance="fill">
                     <mat-label>Credit Card Number</mat-label>
@@ -114,23 +113,37 @@
                         <mat-icon matSuffix>mode_edit</mat-icon>
                     </mat-form-field>
                 </div>
-                <div>
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Email</mat-label>
-                        <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-                            placeholder="Ex. pat@example.com">
-                        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                            Please enter a valid email address
-                        </mat-error>
-                        <mat-error *ngIf="emailFormControl.hasError('required')">
-                            Email is <strong>required</strong>
-                        </mat-error>
-                    </mat-form-field>
-                </div>
             </div>
         </div>
-        <button type="button" (click)="submit()">Submit</button>
+        <div class="align-form">
+            <div class="mr-5">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Country</mat-label>
+                    <input matInput placeholder="Ex. San Francisco">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                        placeholder="Ex. pat@example.com">
+                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                        Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                        Email is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
 
+        </div>
+
+
+        <div class=" m-10 text-center ">
+
+            <button class="bg-white font-semibold py-2 px-4 rounded hover:border-gray-400 text-black text-1xl"
+                type="button" (click)="submit()">Submit</button>
+        </div>
     </div>
 
 </page-container>

@@ -14,6 +14,7 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { ApiService } from './api-store/services/api.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -57,6 +58,7 @@ const routerConfig: ExtraOptions = {
     StoreModule.forRoot(reducers, {
       metaReducers
     }),
+     NgbModule,
 
   ],
   providers: [ApiService  ],
