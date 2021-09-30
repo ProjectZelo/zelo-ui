@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { PaymentMethod } from 'src/app/model/payment.model';
+import { ApiService } from 'src/app/api-store/services/api.service';
+import { encryptedResponse } from 'src/app/data/mockApi';
+import { creditCardInfo, PaymentMethod } from 'src/app/model/payment.model';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -9,7 +11,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
 }
-
 
 @Component({
   selector: 'zelo-buy',
@@ -26,9 +27,12 @@ export class BuyComponent implements OnInit {
   ]);
 
   matcher = new MyErrorStateMatcher();
+  creditCardInfo = new creditCardInfo();
   cardNumber: number;
+  ccv: number;
+  publicKey: string;
 
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.setPaymentOptions();
@@ -54,6 +58,17 @@ export class BuyComponent implements OnInit {
 
   ChangingValue(e: Event) {
     this.isSelected = true;
+        // TODO: mocking the encryped response for now
+    // this.apiService.getEncryptednumber().subscribe(respose => 
+    //   {
+    //     const encryptedData = respose
+    //     console.log('enc', respose);
+    //   })
+
+    const encryptedData = encryptedResponse;
+    this.publicKey = encryptedData.data.publicKey;
+    console.log('resE', encryptedData);
+    
   }
 
   CCInputChange($event: Event) {
@@ -61,7 +76,8 @@ export class BuyComponent implements OnInit {
   }
 
   submit() {
-    console.log('cardNum', this.cardNumber);
+    // TODO: need to do credicard encrypt to sent the encriptedData
+    console.log('cardNum', this.creditCardInfo);
   }
 }
 
