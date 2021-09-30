@@ -43,7 +43,7 @@ export class HighchartComponent implements OnInit {
 
 
       chart: {
-        backgroundColor: 'rgb(244, 247, 255)'
+        backgroundColor: 'rgb(30, 41, 59);'
       },
       title: {
         text: undefined
