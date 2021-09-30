@@ -1,4 +1,13 @@
 {
-    "title": "zelo-fr"
+    "title": "zelo-fr",
+    "language": "En",
+    "header": {
+        "dashboard": "Dashboard-Fr",
+        "buy": "Buy-Fr",
+        "earn": "Earn-Fr",
+        "send": "Send-Fr",
+        "receive": "Receive-Fr",
+        "robo": "Robo-Fr"
+    }
 
 }

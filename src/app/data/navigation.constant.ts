@@ -1,33 +1,33 @@
 export const horizontalNavigation = [
     {
         id: 'dashboard',
-        title: 'Dashboard',
+        title: 'header.dashboard',
         link: '/dashboard'
     },
 
     {
         id: 'buy',
-        title: 'Buy',
+        title: 'header.buy',
         link: '/buy'
     },
     {
         id: 'earn',
-        title: 'Earn',
+        title: 'header.earn',
         link: '/earn'
     },
     {
         id: 'send',
-        title: 'Send',
+        title: 'header.send',
         link: '/send'
     },
     {
         id: 'receive',
-        title: 'Receive',
+        title: 'header.receive',
         link: '/receive'
     },
     {
         id: 'robo',
-        title: 'Robo',
+        title: 'header.robo',
         type: 'basic',
         link: '/robo'
     },

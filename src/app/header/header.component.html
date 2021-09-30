@@ -1,17 +1,25 @@
 <!-- Top bar -->
-<div class="items-center relative dark justify-between flex flex-auto w-full px-4 md:px-8 bg-gray-800 dark:bg-gray-900">
+
 
     <!-- TODO Top bar Mobile hamburger menu-->
 
 
-    <div class="flex auto ">
-        <img class="w-24" src="assets/images/logo/zelo.png" alt="Logo image">
+ 
+    <div class="flex flex-auto justify-between px-4 py-4 relative dark  w-full bg-gray-800 dark:bg-gray-900">
+        <div class="flex auto ">
+            <img class="w-24" src="assets/images/logo/zelo.png" alt="Logo image">
+    
+        </div>
+        <div>
+            <zelo-zelo-navigation></zelo-zelo-navigation>
+        </div>
 
+        <div class="">
+            <a href="javascript:void(0)" (click)="languageChange(currentLang)">
+                    <img src="{{imageSrc}}"/>
+            </a>
+        </div>
     </div>
     <div>
-        <zelo-zelo-navigation></zelo-zelo-navigation>
-    </div>
-    <div>
 
     </div>
-</div>
