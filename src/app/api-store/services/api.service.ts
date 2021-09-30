@@ -11,4 +11,8 @@ export class ApiService {
   recieveGetCall(cc: number) {
     return this.http.get(`/recieve/${cc}`);
   }
+
+  getEncryptednumber() {
+    return this.http.get(`localhost:4200/encryption`);
+  }
 }

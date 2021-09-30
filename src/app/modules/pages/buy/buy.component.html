@@ -35,7 +35,7 @@
             <div>
                 <mat-form-field class="example-form-field" appearance="fill">
                     <mat-label>CCV</mat-label>
-                    <input matInput type="text">
+                    <input matInput type="text" [(ngModel)]="ccv">
                 </mat-form-field>
             </div>
         </div>
@@ -43,13 +43,13 @@
             <div class="mr-5">
                 <mat-form-field class="example-form-field" appearance="fill">
                     <mat-label>Expiry Month</mat-label>
-                    <input matInput type="text">
+                    <input matInput type="text" [(ngModel)]="creditCardInfo.expMonth">
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field class="example-form-field" appearance="fill">
                     <mat-label>Expiry Year</mat-label>
-                    <input matInput type="text">
+                    <input matInput type="text" [(ngModel)]="creditCardInfo.expYear">
                 </mat-form-field>
             </div>
         </div>
@@ -71,7 +71,7 @@
             <div class="mr-5">
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Address</mat-label>
-                    <textarea matInput placeholder="Ex. 100 Main St"></textarea>
+                    <textarea matInput placeholder="Ex. 100 Main St" [(ngModel)]="creditCardInfo.billingDetails.address"></textarea>
                 </mat-form-field>
             </div>
             <div>
@@ -110,7 +110,7 @@
                     <mat-form-field class="example-full-width" appearance="fill">
                         <mat-label>Phone</mat-label>
                         <span matPrefix>+1 &nbsp;</span>
-                        <input type="tel" matInput placeholder="555-555-1234">
+                        <input type="tel" matInput placeholder="555-555-1234" [(ngModel)]="creditCardInfo.metadata.phoneNumber">
                         <mat-icon matSuffix>mode_edit</mat-icon>
                     </mat-form-field>
                 </div>
@@ -127,7 +127,7 @@
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Email</mat-label>
                     <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-                        placeholder="Ex. pat@example.com">
+                        placeholder="Ex. pat@example.com" [(ngModel)]="creditCardInfo.metadata.email">
                     <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
                         Please enter a valid email address
                     </mat-error>

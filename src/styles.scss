@@ -7,6 +7,3 @@ body { margin: 0; font-family: Roboto; }
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import 'assets/fonts/fonts.scss'; //import roboto font
-
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
