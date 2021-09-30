@@ -13,7 +13,8 @@
                         fill="#648299" fill-rule="nonzero" />
                 </svg> -->
 
-                <select class="border border-gray-300 text-gray-600 h-10 pl-30 pr-30 bg-white hover:borde "
+                <select
+                    class="bg-transparent border border-gray-300 text-gray-100 h-10 pl-30 pr-30 hover:borde rounded "
                     (change)="ChangingValue($event)">
                     <option *ngFor="let method of paymentMethod" [value]="method.value" [disabled]="method.disable">
                         {{method.type}}</option>
@@ -141,7 +142,8 @@
 
         <div class=" m-10 text-center ">
 
-            <button class="bg-white font-semibold py-2 px-4 rounded hover:border-gray-400 text-black text-1xl"
+            <button
+                class="bg-transparent hover:bg-white text-white font-semibold hover:text-black py-2 px-4 border border-gray-400 hover:border-transparent rounded"
                 type="button" (click)="submit()">Submit</button>
         </div>
     </div>
