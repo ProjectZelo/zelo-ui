@@ -11,12 +11,17 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'zelo-ui';
   lang: string;
   languageSubsription: Subscription;
+  isDarkModeOn: boolean;
   constructor(private translate: TranslateService) {}
 
   ngOnInit() {
     this.languageSubsription = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.lang = event.lang;
     });
+  }
+
+  getMode(e: boolean) {
+    this.isDarkModeOn = e;
   }
 
   ngOnDestroy() {

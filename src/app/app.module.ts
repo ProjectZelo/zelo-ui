@@ -14,6 +14,7 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { ApiService } from './api-store/services/api.service';
+import { SharedModule } from './shared/shared.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -44,6 +45,7 @@ const routerConfig: ExtraOptions = {
     BrowserModule,
     BrowserAnimationsModule,
     ZeloModule,
+    SharedModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes, routerConfig),
     TranslateModule.forRoot({

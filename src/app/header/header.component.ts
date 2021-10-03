@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { horizontalNavigation } from '../data/navigation.constant';
 
@@ -11,6 +11,9 @@ export class HeaderComponent implements OnInit {
   navigationItem = horizontalNavigation;
   currentLang: string;
   imageSrc: string;
+  currentMode = 'light';
+
+  @Output() isDarkMode: EventEmitter<boolean> = new EventEmitter();
 
   constructor(private translate: TranslateService) { }
 
@@ -29,4 +32,9 @@ export class HeaderComponent implements OnInit {
     this.getCurrentLanguage();
   }
 
+  themeChange(currentMode: string) {
+    const isDarkModeOn = currentMode === 'light' ? true : false;
+    this.isDarkMode.emit(isDarkModeOn);
+    this.currentMode = isDarkModeOn ? 'dark' : 'light';
+  }
 }

@@ -19,6 +19,13 @@
                     <img src="{{imageSrc}}"/>
             </a>
         </div>
+        
+        <div>
+            <a href="javascript:void(0)" (click)="themeChange(currentMode)">
+                <mat-icon *ngIf="currentMode === 'light'" class="icon-size-5" [svgIcon]="'heroicons_solid:moon'"></mat-icon>
+                <mat-icon *ngIf="currentMode === 'dark'" class="icon-size-5" [svgIcon]="'heroicons_solid:sun'"></mat-icon>
+            </a>
+        </div>
     </div>
     <div>
 
