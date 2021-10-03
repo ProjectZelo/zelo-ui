@@ -66,11 +66,15 @@
     body, .dark, .light {
         @apply bg-default #{'!important'};
     }
- 
+   
     body, .light {
-        color: rgb(222, 219, 219);
-    }
+        color: rgb(52, 52, 52);
     
+        
+    }
+    body, .dark {
+        color: rgb(249, 249, 249);
+    }
     
 
     *, *::before, *::after {
