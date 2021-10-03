@@ -15,12 +15,13 @@ import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { ApiService } from './api-store/services/api.service';
 import { SharedModule } from './shared/shared.module';
+import { IconsModule } from './core/icons/icons.module';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
 }
 
-export function loadLocale() : string {
+export function loadLocale(): string {
   // TODO: get user's preffered language
   return 'en';
 }
@@ -43,6 +44,7 @@ const routerConfig: ExtraOptions = {
   ],
   imports: [
     BrowserModule,
+    IconsModule,
     BrowserAnimationsModule,
     ZeloModule,
     SharedModule,
@@ -61,10 +63,10 @@ const routerConfig: ExtraOptions = {
     }),
 
   ],
-  providers: [ApiService  ],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
   constructor(private translate: TranslateService) {
     this.translate.addLangs(['en', 'fr']);
     this.translate.setDefaultLang('en');

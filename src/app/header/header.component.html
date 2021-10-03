@@ -1,32 +1,35 @@
 <!-- Top bar -->
 
 
-    <!-- TODO Top bar Mobile hamburger menu-->
+<!-- TODO Top bar Mobile hamburger menu-->
 
 
- 
-    <div class="flex flex-auto justify-between px-4 py-4 relative dark  w-full bg-gray-800 dark:bg-gray-900">
-        <div class="flex auto ">
-            <img class="w-24" src="assets/images/logo/zelo.png" alt="Logo image">
-    
-        </div>
-        <div>
-            <zelo-zelo-navigation></zelo-zelo-navigation>
-        </div>
 
-        <div class="">
-            <a href="javascript:void(0)" (click)="languageChange(currentLang)">
-                    <img src="{{imageSrc}}"/>
-            </a>
-        </div>
-        
-        <div>
-            <a href="javascript:void(0)" (click)="themeChange(currentMode)">
-                <mat-icon *ngIf="currentMode === 'light'" class="icon-size-5" [svgIcon]="'heroicons_solid:moon'"></mat-icon>
-                <mat-icon *ngIf="currentMode === 'dark'" class="icon-size-5" [svgIcon]="'heroicons_solid:sun'"></mat-icon>
-            </a>
-        </div>
+<div class="flex flex-auto justify-between px-4 py-4 relative dark  w-full bg-gray-800 dark:bg-gray-900">
+    <div class="flex auto ">
+        <img class="w-24" src="assets/images/logo/zelo.png" alt="Logo image">
+
     </div>
     <div>
-
+        <zelo-zelo-navigation></zelo-zelo-navigation>
     </div>
+
+    <div class="flex">
+        <div class=" mr-3">
+            <a href="javascript:void(0)" (click)="languageChange(currentLang)">
+                <img src="{{imageSrc}}" />
+            </a>
+        </div>
+        <div>
+            <a href="javascript:void(0)" (click)="themeChange(currentMode)">
+                <mat-icon *ngIf="currentMode === 'dark'" class="icon-size-5" [svgIcon]="'heroicons_solid:moon'">
+                </mat-icon>
+                <mat-icon *ngIf="currentMode === 'light'" class="icon-size-5" [svgIcon]="'heroicons_solid:sun'">
+                </mat-icon>
+            </a>
+        </div>
+    </div>
+</div>
+<div>
+
+</div>
