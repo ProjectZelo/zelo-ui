@@ -64,8 +64,14 @@
     }
 
     body, .dark, .light {
-        @apply text-default bg-default #{'!important'};
+        @apply bg-default #{'!important'};
     }
+ 
+    body, .light {
+        color: rgb(222, 219, 219);
+    }
+    
+    
 
     *, *::before, *::after {
         --tw-border-opacity: 1 !important;

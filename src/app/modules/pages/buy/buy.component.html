@@ -3,7 +3,7 @@
 
 
         <div class="flex-auto p-6 sm:p-10 text-center">
-            <div class="text font-semibold text-3xl gap-5 m-5 ml-5 relative dark bg-gray-800 dark:bg-gray-900"> Select a
+            <div class="text font-semibold text-3xl gap-5 m-5 ml-5 "> Select a
                 payment method</div>
 
             <div class="relative inline-flex ">
@@ -13,8 +13,7 @@
                         fill="#648299" fill-rule="nonzero" />
                 </svg> -->
 
-                <select
-                    class="bg-transparent border border-gray-300 text-gray-100 h-10 pl-30 pr-30 hover:borde rounded "
+                <select class="bg-transparent border border-gray-300 h-10 pl-30 pr-30 hover:borde rounded "
                     (change)="ChangingValue($event)">
                     <option *ngFor="let method of paymentMethod" [value]="method.value" [disabled]="method.disable">
                         {{method.type}}</option>
@@ -24,7 +23,7 @@
         </div>
     </div>
 
-    <div *ngIf="isSelected" class="form-section relative dark bg-gray-800 dark:bg-gray-900">
+    <div *ngIf="isSelected" class="form-section ">
         <div class="align-form ">
             <div class="mr-5">
                 <mat-form-field class="example-form-field" appearance="fill">
@@ -71,7 +70,8 @@
             <div class="mr-5">
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Address</mat-label>
-                    <textarea matInput placeholder="Ex. 100 Main St" [(ngModel)]="creditCardInfo.billingDetails.address"></textarea>
+                    <textarea matInput placeholder="Ex. 100 Main St"
+                        [(ngModel)]="creditCardInfo.billingDetails.address"></textarea>
                 </mat-form-field>
             </div>
             <div>
@@ -110,7 +110,8 @@
                     <mat-form-field class="example-full-width" appearance="fill">
                         <mat-label>Phone</mat-label>
                         <span matPrefix>+1 &nbsp;</span>
-                        <input type="tel" matInput placeholder="555-555-1234" [(ngModel)]="creditCardInfo.metadata.phoneNumber">
+                        <input type="tel" matInput placeholder="555-555-1234"
+                            [(ngModel)]="creditCardInfo.metadata.phoneNumber">
                         <mat-icon matSuffix>mode_edit</mat-icon>
                     </mat-form-field>
                 </div>
