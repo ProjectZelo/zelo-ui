@@ -63,17 +63,18 @@
         -webkit-text-fill-color: currentColor;
     }
 
-    body, .dark, .light {
+    body, .light {
         @apply bg-default #{'!important'};
     }
+
    
     body, .light {
-        color: rgb(52, 52, 52);
-    
-        
+        color: rgb(206, 203, 203);
+       
     }
     body, .dark {
-        color: rgb(249, 249, 249);
+        color: rgb(47, 46, 46);
+      
     }
     
 

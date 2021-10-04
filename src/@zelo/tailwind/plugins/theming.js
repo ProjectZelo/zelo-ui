@@ -174,7 +174,7 @@ const theming = plugin.withOptions((options) => ({
                             light: {
                                 'bg-app-bar': '#FFFFFF',
                                 'bg-card': '#FFFFFF',
-                                'bg-default': colors.blueGray[100],
+                                'bg-default': '#1a1819',
                                 'bg-dialog': '#FFFFFF',
                                 'bg-hover': chroma(colors.blueGray[400]).alpha(0.12).css(),
                                 'bg-status-bar': colors.blueGray[300]
@@ -182,7 +182,7 @@ const theming = plugin.withOptions((options) => ({
                             dark: {
                                 'bg-app-bar': colors.blueGray[900],
                                 'bg-card': colors.blueGray[800],
-                                'bg-default': colors.blueGray[900],
+                                'bg-default': '#e3174a',
                                 'bg-dialog': colors.blueGray[800],
                                 'bg-hover': 'rgba(255, 255, 255, 0.05)',
                                 'bg-status-bar': colors.blueGray[900]
