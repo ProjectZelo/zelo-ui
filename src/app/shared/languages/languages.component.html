@@ -1,5 +1,3 @@
-<mat-menu #appMenu="matMenu">
-    <button mat-menu-item (click)="languageChange(currentLang)">English</button>
-    <button mat-menu-item (click)="languageChange(currentLang)">French</button>
-</mat-menu>
-<button mat-button [matMenuTriggerFor]="appMenu">English</button>
+<div>
+    <a href="javascript:void(0)" (click)="languageChange(currentLang)">{{'language' | translate}}</a>
+</div>

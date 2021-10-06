@@ -5,7 +5,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LanguagesComponent } from './languages/languages.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
@@ -14,7 +13,7 @@ import { MatMenuModule } from '@angular/material/menu';
 
 
 @NgModule({
-  declarations: [PageContainerComponent, LanguagesComponent],
+  declarations: [PageContainerComponent],
   imports: [
     MatButtonModule,
     MatDividerModule,
@@ -28,12 +27,12 @@ import { MatMenuModule } from '@angular/material/menu';
   ],
   exports: [
     PageContainerComponent,
-    LanguagesComponent,
     MatSelectModule,
     MatInputModule,
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
+    MatMenuModule
   ]
 })
 export class SharedModule { }

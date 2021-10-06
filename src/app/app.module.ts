@@ -17,6 +17,7 @@ import { ApiService } from './api-store/services/api.service';
 import { SharedModule } from './shared/shared.module';
 import { IconsModule } from './core/icons/icons.module';
 import { FooterComponent } from './footer/footer.component';
+import { LanguagesComponent } from './shared/languages/languages.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
@@ -38,8 +39,8 @@ const routerConfig: ExtraOptions = {
     AppComponent,
     HeaderComponent,
     ZeloNavigationComponent,
-    FooterComponent
-
+    FooterComponent,
+    LanguagesComponent
 
 
 
