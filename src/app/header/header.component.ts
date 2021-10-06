@@ -9,28 +9,18 @@ import { horizontalNavigation } from '../data/navigation.constant';
 })
 export class HeaderComponent implements OnInit {
   navigationItem = horizontalNavigation;
-  currentLang: string;
-  imageSrc: string;
+
   currentMode = 'light';
 
   @Output() isDarkMode: EventEmitter<boolean> = new EventEmitter();
 
-  constructor(private translate: TranslateService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.getCurrentLanguage();
+
   }
 
-  getCurrentLanguage() {
-    this.currentLang = this.translate.currentLang;
-    this.imageSrc = this.currentLang === 'fr' ? '../../assets/images/flags/US.svg' : '../../assets/images/flags/CA.svg'; 
-  }
 
-  languageChange(lang: string) {
-    let useLanguage = lang === 'en' ? 'fr' : 'en';
-    this.translate.use(useLanguage);
-    this.getCurrentLanguage();
-  }
 
   themeChange(currentMode: string) {
     const isDarkModeOn = currentMode === 'light' ? true : false;

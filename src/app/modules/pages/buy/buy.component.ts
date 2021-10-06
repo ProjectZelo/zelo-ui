@@ -21,9 +21,12 @@ export class BuyComponent implements OnInit {
   paymentMethod: Array<PaymentMethod>;
   isSelected: boolean = false;
   value: string;
+  selectedValue: string;
+
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
+
   ]);
 
   matcher = new MyErrorStateMatcher();
@@ -58,7 +61,7 @@ export class BuyComponent implements OnInit {
 
   ChangingValue(e: Event) {
     this.isSelected = true;
-        // TODO: mocking the encryped response for now
+    // TODO: mocking the encryped response for now
     // this.apiService.getEncryptednumber().subscribe(respose => 
     //   {
     //     const encryptedData = respose
@@ -68,7 +71,7 @@ export class BuyComponent implements OnInit {
     const encryptedData = encryptedResponse;
     this.publicKey = encryptedData.data.publicKey;
     console.log('resE', encryptedData);
-    
+
   }
 
   CCInputChange($event: Event) {
