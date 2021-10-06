@@ -1,0 +1,154 @@
+<page-container>
+    <div *ngIf="!selectedValue" class="rounded-2xl ml-5 mt-4">
+
+
+        <div class="flex-auto p-6 sm:p-10 text-center">
+            <div class="text font-semibold text-3xl gap-5 m-5 ml-5 "> Select a
+                payment method</div>
+
+            <div class="w-30 inline-block">
+                <mat-form-field class="min-w-300">
+                    <mat-select [(ngModel)]=" selectedValue">
+                        <mat-option *ngFor="let method of paymentMethod" [value]="method.value">{{method.type}}
+                        </mat-option>
+
+                    </mat-select>
+                </mat-form-field>
+
+                <!-- <mat-select class="bg-transparent border justify-center border-gray-300 h-10 hover:borde rounded "
+                    (change)="ChangingValue($event)">
+                    <mat-option *ngFor="let method of paymentMethod" [value]="method.value" [disabled]="method.disable">
+                        {{method.type}}</mat-option>
+                </mat-select> -->
+
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="selectedValue" class="form-section ">
+        <div class="flex flex-auto justify-center ">
+            <div class="mr-5">
+                <mat-form-field class="example-form-field w-50" appearance="fill">
+                    <mat-label>Credit Card Number</mat-label>
+                    <input matInput type="text" [(ngModel)]="cardNumber">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="example-form-field w-50" appearance="fill">
+                    <mat-label>CCV</mat-label>
+                    <input matInput type="text" [(ngModel)]="ccv">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="flex flex-auto justify-center">
+            <div class="mr-5">
+                <mat-form-field class="example-form-field w-50" appearance="fill">
+                    <mat-label>Expiry Month</mat-label>
+                    <input matInput type="text" [(ngModel)]="creditCardInfo.expMonth">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="example-form-field w-50" appearance="fill">
+                    <mat-label>Expiry Year</mat-label>
+                    <input matInput type="text" [(ngModel)]="creditCardInfo.expYear">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="flex flex-auto justify-center">
+            <div class="mr-5">
+                <mat-form-field class="example-form-field w-50" appearance="fill">
+                    <mat-label>First Name</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="example-form-field w-50" appearance="fill">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="flex flex-auto justify-center">
+            <div class="mr-5">
+                <mat-form-field class="example-full-width w-50" appearance="fill">
+                    <mat-label>Address</mat-label>
+                    <textarea matInput placeholder="Ex. 100 Main St"
+                        [(ngModel)]="creditCardInfo.billingDetails.address"></textarea>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="example-full-width w-50" appearance="fill">
+                    <mat-label>Address 2</mat-label>
+                    <textarea matInput></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="flex flex-auto justify-center">
+            <div class="mr-5">
+                <mat-form-field class="example-full-width w-50" appearance="fill">
+                    <mat-label>City</mat-label>
+                    <input matInput placeholder="Ex. San Francisco">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="example-full-width w-50" appearance="fill">
+                    <mat-label>State</mat-label>
+                    <input matInput placeholder="Ex. California">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="flex flex-auto justify-center">
+            <div class="mr-5">
+                <mat-form-field class="example-full-width w-50" appearance="fill">
+                    <mat-label>Postal Code</mat-label>
+                    <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="">
+                    <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+                </mat-form-field>
+            </div>
+            <div>
+                <div>
+                    <mat-form-field class="example-full-width w-50" appearance="fill">
+                        <mat-label>Phone</mat-label>
+                        <span matPrefix>+1 &nbsp;</span>
+                        <input type="tel" matInput placeholder="555-555-1234"
+                            [(ngModel)]="creditCardInfo.metadata.phoneNumber">
+                        <mat-icon matSuffix>mode_edit</mat-icon>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-auto justify-center">
+            <div class="mr-5">
+                <mat-form-field class="example-full-width w-50" appearance="fill">
+                    <mat-label>Country</mat-label>
+                    <input matInput placeholder="Ex. San Francisco">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="example-full-width w-50" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                        placeholder="Ex. pat@example.com" [(ngModel)]="creditCardInfo.metadata.email">
+                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                        Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                        Email is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+        </div>
+
+
+        <div class=" m-10 text-center ">
+
+            <button
+                class="bg-transparent hover:bg-white font-semibold hover:text-black py-2 px-4 border border-gray-400 hover:border-transparent rounded"
+                type="button" (click)="submit()">Submit</button>
+        </div>
+    </div>
+
+</page-container>

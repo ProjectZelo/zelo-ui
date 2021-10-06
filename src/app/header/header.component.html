@@ -1,0 +1,32 @@
+<!-- Top bar -->
+
+
+<!-- TODO Top bar Mobile hamburger menu-->
+
+
+
+<div class="flex flex-auto justify-between px-4 py-4 ">
+    <div class="flex auto ">
+
+        <img class="w-24" src="assets/images/logo/zelo.png" alt="Logo image">
+    </div>
+    <div>
+        <zelo-zelo-navigation></zelo-zelo-navigation>
+
+    </div>
+
+    <div>
+        <div>
+            <a href="javascript:void(0)" (click)="themeChange(currentMode)">
+                <mat-icon *ngIf="currentMode === 'light'" class="icon-size-5" [svgIcon]="'heroicons_solid:moon'">
+                </mat-icon>
+                <mat-icon *ngIf="currentMode === 'dark'" class="icon-size-5" [svgIcon]="'heroicons_solid:sun'">
+                </mat-icon>
+            </a>
+        </div>
+        <div>
+            <zelo-languages></zelo-languages>
+        </div>
+    </div>
+
+</div>

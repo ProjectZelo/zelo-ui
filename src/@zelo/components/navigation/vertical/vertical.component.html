@@ -1,0 +1,85 @@
+<div class="zelo-vertical-navigation-wrapper">
+
+    <!-- Header -->
+    <div class="zelo-vertical-navigation-header">
+        <ng-content select="[zeloVerticalNavigationHeader]"></ng-content>
+    </div>
+
+    <!-- Content -->
+    <div class="zelo-vertical-navigation-content" zeloScrollbar
+        [zeloScrollbarOptions]="{wheelPropagation: inner, suppressScrollX: true}" #navigationContent>
+
+        <!-- Content header -->
+        <div class="zelo-vertical-navigation-content-header">
+            <ng-content select="[zeloVerticalNavigationContentHeader]"></ng-content>
+        </div>
+
+        <!-- Items -->
+        <ng-container *ngFor="let item of navigation; trackBy: trackByFn">
+
+            <!-- Skip the hidden items -->
+            <ng-container *ngIf="(item.hidden && !item.hidden(item)) || !item.hidden">
+
+                <!-- Aside -->
+                <zelo-vertical-navigation-aside-item *ngIf="item.type === 'aside'" [item]="item" [name]="name"
+                    [activeItemId]="activeAsideItemId" [autoCollapse]="autoCollapse" [skipChildren]="true"
+                    (click)="toggleAside(item)"></zelo-vertical-navigation-aside-item>
+
+                <!-- Basic -->
+                <zelo-vertical-navigation-basic-item *ngIf="item.type === 'basic'" [item]="item" [name]="name">
+                </zelo-vertical-navigation-basic-item>
+
+                <!-- Collapsable -->
+                <zelo-vertical-navigation-collapsable-item *ngIf="item.type === 'collapsable'" [item]="item"
+                    [name]="name" [autoCollapse]="autoCollapse"></zelo-vertical-navigation-collapsable-item>
+
+                <!-- Divider -->
+                <zelo-vertical-navigation-divider-item *ngIf="item.type === 'divider'" [item]="item" [name]="name">
+                </zelo-vertical-navigation-divider-item>
+
+                <!-- Group -->
+                <zelo-vertical-navigation-group-item *ngIf="item.type === 'group'" [item]="item" [name]="name"
+                    [autoCollapse]="autoCollapse"></zelo-vertical-navigation-group-item>
+
+                <!-- Spacer -->
+                <zelo-vertical-navigation-spacer-item *ngIf="item.type === 'spacer'" [item]="item" [name]="name">
+                </zelo-vertical-navigation-spacer-item>
+
+            </ng-container>
+
+        </ng-container>
+
+        <!-- Content footer -->
+        <div class="zelo-vertical-navigation-content-footer">
+            <ng-content select="[zeloVerticalNavigationContentFooter]"></ng-content>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="zelo-vertical-navigation-footer">
+        <ng-content select="[zeloVerticalNavigationFooter]"></ng-content>
+    </div>
+
+</div>
+
+<!-- Aside -->
+<div class="zelo-vertical-navigation-aside-wrapper" *ngIf="activeAsideItemId" zeloScrollbar
+    [zeloScrollbarOptions]="{wheelPropagation: false, suppressScrollX: true}" [@fadeInLeft]="position === 'left'"
+    [@fadeInRight]="position === 'right'" [@fadeOutLeft]="position === 'left'" [@fadeOutRight]="position === 'right'">
+
+    <!-- Items -->
+    <ng-container *ngFor="let item of navigation; trackBy: trackByFn">
+
+        <!-- Skip the hidden items -->
+        <ng-container *ngIf="(item.hidden && !item.hidden(item)) || !item.hidden">
+
+            <!-- Aside -->
+            <zelo-vertical-navigation-aside-item *ngIf="item.type === 'aside' && item.id === activeAsideItemId"
+                [item]="item" [name]="name" [autoCollapse]="autoCollapse"></zelo-vertical-navigation-aside-item>
+
+        </ng-container>
+
+    </ng-container>
+
+</div>

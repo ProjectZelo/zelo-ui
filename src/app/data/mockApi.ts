@@ -1,0 +1,2 @@
+export const encryptedResponse = 
+    {"data":{"keyId":"key1","publicKey":"LS0tLS1CRUdJVN4WHU5MEZHRWZaaGQ1Y0o4cFpKSkd2VGMrMyt6eE1sWU1HCnZmUjNvUFFoWmtwT2NyRUhlajA9Cj1BT0QzCi0tLS0tRU5EIFBHUCBQVUJMSUMgS0VZIEJMT0NLLS0tLS0K"}}

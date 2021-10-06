@@ -1,1 +1,7 @@
-<router-outlet></router-outlet>
+<!--TODO: Inject navigation inside header component-->
+<div [ngClass]="{'light' : isDarkModeOn}">
+    <zelo-header (isDarkMode)="getMode($event)"></zelo-header>
+
+    <router-outlet></router-outlet>
+    <zelo-footer></zelo-footer>
+</div>
