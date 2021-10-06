@@ -25,13 +25,13 @@ export class HighchartComponent implements OnInit {
       type: 'line',
       name: 'name1',
       data: [176, 487, 75, 757, 868, 889],
-      color: '#97C3C9',
+
     },
     {
       type: 'line',
       name: 'name2',
       data: [173, 447, 578, 775, 888, 988],
-      color: '#97C3C9',
+
     },
 
     ];
@@ -69,7 +69,7 @@ export class HighchartComponent implements OnInit {
       legend: {
         itemMarginTop: 16,
         itemStyle: {
-          color: '#dee0e3'
+
         },
 
       },

@@ -7,19 +7,15 @@
 
 <div class="flex flex-auto justify-between px-4 py-4 ">
     <div class="flex auto ">
-        <img class="w-24" src="assets/images/logo/zelo.png" alt="Logo image">
 
+        <img class="w-24" src="assets/images/logo/zelo.png" alt="Logo image">
     </div>
     <div>
         <zelo-zelo-navigation></zelo-zelo-navigation>
+
     </div>
 
-    <div class="flex">
-        <div class=" mr-3">
-            <a href="javascript:void(0)" (click)="languageChange(currentLang)">
-                <img src="{{imageSrc}}" />
-            </a>
-        </div>
+    <div>
         <div>
             <a href="javascript:void(0)" (click)="themeChange(currentMode)">
                 <mat-icon *ngIf="currentMode === 'light'" class="icon-size-5" [svgIcon]="'heroicons_solid:moon'">
@@ -28,8 +24,9 @@
                 </mat-icon>
             </a>
         </div>
+        <div>
+            <zelo-languages></zelo-languages>
+        </div>
     </div>
-</div>
-<div>
 
 </div>
