@@ -1,9 +1,22 @@
 <page-container>
     <div class="flex flex-auto m-5 justify-center">
-        <button
+        <button *ngIf="!walletCreated" (click)="walletCreate()"
             class="bg-transparent hover:bg-white font-semibold hover:text-black py-2 px-4 border border-gray-400 hover:border-transparent rounded">
             Generate your USDC wallet
         </button>
+        <span *ngIf="walletCreated">
+            <span class="success-box mb-5">
+                <p class="p-5">Your USDC wallet has been successfully created!</p>
+            </span>
+            <ngx-qrcode
+            [elementType]="elementType"
+            [errorCorrectionLevel]="correctionLevel"
+            [value]="value"
+            cssClass="bshadow"></ngx-qrcode>
+            <p class="text-center">
+                <button  class="bg-transparent hover:bg-white font-semibold hover:text-black py-2 px-4 border border-gray-400 hover:border-transparent rounded" (click)="copyText('https://www.google.com')" value="click to copy" >Click here to copy the URL<mat-icon>file_copy</mat-icon></button>
+            </p>
+        </span>
     </div>
 
 

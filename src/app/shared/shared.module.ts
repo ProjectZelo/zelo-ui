@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 
 
 
@@ -24,6 +25,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxQRCodeModule
   ],
   exports: [
     PageContainerComponent,
@@ -32,7 +34,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
-    MatMenuModule
+    MatMenuModule,
+    NgxQRCodeModule
   ]
 })
 export class SharedModule { }
