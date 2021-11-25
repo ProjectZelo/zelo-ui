@@ -8,13 +8,14 @@
             <span class="success-box mb-5">
                 <p class="p-5">Your USDC wallet has been successfully created!</p>
             </span>
-            <ngx-qrcode
-            [elementType]="elementType"
-            [errorCorrectionLevel]="correctionLevel"
-            [value]="value"
-            cssClass="bshadow"></ngx-qrcode>
-            <p class="text-center">
-                <button  class="bg-transparent hover:bg-white font-semibold hover:text-black py-2 px-4 border border-gray-400 hover:border-transparent rounded" (click)="copyText('https://www.google.com')" value="click to copy" >Click here to copy the URL<mat-icon>file_copy</mat-icon></button>
+            <ngx-qrcode [elementType]="elementType" [errorCorrectionLevel]="correctionLevel" [value]="value"
+                cssClass="bshadow"></ngx-qrcode>
+            <p class=" m-5 text-center">
+                <button
+                    class="bg-transparent hover:bg-white font-semibold hover:text-black px-3 border border-gray-400 hover:border-transparent rounded"
+                    (click)="copyText('https://www.google.com')" value="click to copy">Addres: ##xyzabc1234
+                    <mat-icon class="m-3">file_copy</mat-icon>
+                </button>
             </p>
         </span>
     </div>

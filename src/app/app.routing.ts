@@ -15,6 +15,10 @@ export const appRoutes: Route[] = [
         loadChildren: () => import('./modules/pages/dashboard/dashboard.module').then(m => m.DashboardModule)
     },
     {
+        path: 'learn',
+        loadChildren: () => import('./modules/pages/learn/learn.module').then(m => m.LearnModule)
+    },
+    {
         path: 'receive',
         loadChildren: () => import('./modules/pages/receive/receive.module').then(m => m.ReceiveModule)
     },

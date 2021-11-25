@@ -6,6 +6,12 @@ export const horizontalNavigation = [
     },
 
     {
+        id: 'Learn',
+        title: 'header.learn',
+        link: '/learn'
+    },
+
+    {
         id: 'buy',
         title: 'header.buy',
         link: '/buy'

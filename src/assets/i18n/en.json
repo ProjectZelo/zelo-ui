@@ -3,11 +3,11 @@
     "language": "French",
     "header": {
         "dashboard": "Dashboard",
+        "learn": "Learn",
         "buy": "Buy",
         "earn": "Earn",
         "send": "Send",
         "receive": "Receive",
         "robo": "Robo"
     }
-
 }
